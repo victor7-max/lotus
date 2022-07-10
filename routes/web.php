@@ -1,6 +1,9 @@
 <?php
 
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,8 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('/about', 'about-us');
+Route::view('/contact', 'contact');
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
