@@ -20,11 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/about', 'about-us');
-Route::view('/contact', 'contact');
+Route::view('/about', 'about-us')->name('about');
+Route::view('/contact', 'contact')->name('contact');
+Route::post('/add-property', 'Propertycontroller@addproperty')->name('property.upload');
 
 Route::get('/dashboard', function () {
-    return view('home');
+    return view('welcome');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

@@ -147,7 +147,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="">About</a>
+            <a class="nav-link " href="{{ route('about') }}">About</a>
           </li>
 
           <li class="nav-item">
@@ -158,17 +158,25 @@
             <a class="nav-link " href="{{route('register')}}">Sign up</a>
           </li>
 
-          {{-- <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.html">Property Single</a>
-              <a class="dropdown-item " href="blog-single.html">Blog Single</a>
-              <a class="dropdown-item " href="agents-grid.html">Agents Grid</a>
-              <a class="dropdown-item " href="agent-single.html">Agent Single</a>
-            </div>
-          </li> --}}
+        @if (Route::has('login'))
+        @auth
+        <li class="nav-item">
+            <a class="nav-link " href="{{ route ('dashboard') }}">Profile</a>
+          </li>
+          @else
           <li class="nav-item">
-            <a class="nav-link " href="contact.html">Contact</a>
+            <a class="nav-link " href="{{route('login')}}">Login</a>
+          </li>
+          @if (Route::has('register'))
+          <li class="nav-item">
+            <a class="nav-link " href="{{route('register')}}">Sign up</a>
+          </li>
+          @endif
+        @endauth
+
+        @endif
+          <li class="nav-item">
+            <a class="nav-link " href="{{ route('contact') }}">Contact</a>
           </li>
         </ul>
       </div>
