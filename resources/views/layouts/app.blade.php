@@ -151,7 +151,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="property-grid.html">Property</a>
+            <a class="nav-link " href="{{ route('viewprop') }}">Property</a>
           </li>
 
           <li class="nav-item">

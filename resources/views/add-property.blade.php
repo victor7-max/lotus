@@ -1,13 +1,12 @@
-@extends('layouts.app')
-@section('content')
+
 <section class="about-area pd-top-120">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                @include('Admin.sidebar')
+
             </div>
             <div class="col-md-8">
-                <form action="" method="POST" enctype="multipart/form-data"> @csrf
+                <form action="{{ route ('property.upload') }}" method="POST" enctype="multipart/form-data"> @csrf
                     <div class="form-group">
                         <label for="text">name</label>
                         <input type="" value="" name="name" class="form-control">
@@ -28,19 +27,19 @@
                     </div>
                 </div>
                     <div class="form-group">
-                        <label for="">description</label>
+                        <label for="">s_price</label>
                         <input type="text" value="" name="s_price" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="">description</label>
+                        <label for="">location</label>
                         <input type="text" value="" name="location" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="">description</label>
+                        <label for="">rooms</label>
                         <input type="text" value="" name="rooms" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="">description</label>
+                        <label for="">Area</label>
                         <input type="text" value="" name="area" class="form-control">
                     </div>
                     <div class="form-group">
@@ -54,11 +53,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="">description</label>
+                        <label for="">keyword</label>
                         <input type="text" value="" name="keyword" class="form-control">
                     </div>
  <div class="form-group">
-                        <label for="">description</label>
+                        <label for="">amenities</label>
                         <input type="text" value="" name="amenities" class="form-control">
                     </div>
                     <div class="input-group">
@@ -70,10 +69,10 @@
 
                     <button class="btn btn-primary mt-3">add</button>
                 </form>
-
+{{--
             <h4>Hello {{ Auth::User()->name}}</h4>
             <label for="text">name</label>
-            <input type="" value=" {{ Auth::User()->name}}" name="name" class="form-control">
+            <input type="" value=" {{ Auth::User()->name}}" name="name" class="form-control"> --}}
         </div>
     </div>
 
@@ -81,5 +80,5 @@
 
 
 </section>
-@endsection
+
 

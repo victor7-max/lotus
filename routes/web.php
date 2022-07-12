@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::view('/about', 'about-us')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/add-property', 'Propertycontroller@addproperty')->name('property.upload');
+Route::get('/addprop', 'PropertyController@viewprop')->name('viewprop');
 
 Route::get('/dashboard', function () {
     return view('welcome');

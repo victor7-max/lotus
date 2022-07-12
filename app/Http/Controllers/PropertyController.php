@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class PropertyController extends Controller
 {
+
+public function viewprop()
+{
+    return view('add-property');
+}
+
+
+
+
     public function addproperty(Request $r)
     {
   /* Add validdation here */
@@ -24,6 +33,12 @@ $p->location = $r->location;
 $p->rooms = $r->rooms;
 $p->type = $r->type;
 $p->area = $r->area;
+$p->amenities = $r->amenities;
+$p->image = $r->image;
+$p->video = $r->video;
+
+$p->save();
+dd('request all');
 
 
     }
